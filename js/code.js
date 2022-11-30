@@ -133,10 +133,101 @@
 // }
 // addition(5, 5)
 //
-function subtraction(numb1, numb2) {
-    return (numb1 - numb2);
-}
-console.log("Answer is:", subtraction(19, 9));
+// function subtraction(numb1, numb2) {
+//     return (numb1 - numb2);
+// }
+// console.log("Answer is:", subtraction(19, 9));
+
+/* Ternary Operator */
+// let age = 17;
+// let age = prompt("Enter age");
+// console.log(age >=17 ? "You're qualified": "You're not qualified");
+//
+// function sumOf(...args) {
+//     return args.reduce((a,b)=> {
+//         return a + b
+//     })
+// }
+// console.log(sumOf(1, 2 ,3, 4, 5));
 
 /* Constructor Function */
+// function Person(...details) {
+//     this.firstName = details[0];
+//     this.lastName = details[1];
+//     this.email = details.at(-1);
+// }
+// let person1 = new Person("Peter", "Parker", "peterparker@gmail.com")
+// console.log(person1);
+// console.dir(person1);
 
+// function PersonDetails(firstName, lastName, email) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.email = email;
+// }
+// const person1 = new PersonDetails("Peter", "Parker", "peterparker@gmail.com")
+// console.log(person1.firstName);
+// console.log(person1.lastName);
+// console.log(person1.email);
+
+/* Solution */
+// function PersonDetails(firstName, lastName, 
+//     email) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.email = email;
+
+//     this.getFirstName = ()=> {
+//         return this.firstName
+//     }
+//     this.setFirstName = (value) =>{
+//         this.firstName = value;
+//     }
+//     this.getLastName = ()=> {
+//         return this.lastName
+//     }
+//     this.setLastName = (value) =>{
+//         this.lastName = value;
+//     }
+//     this.getEmail = ()=> {
+//         return this.email
+//     }
+//     this.setEmail = (value) =>{
+//         this.email = value;
+//     }    
+    
+//     this.display = ()=> {
+//         return `
+//         Name: ${this.getFirstName()}
+//         Surname: ${this.getLastName()}
+//         Email: ${this.getEmail()}`;
+//     }
+// } 
+// let person1 = new PersonDetails("Peter", "Henk",
+// "peter@gmail.com");
+// console.log(person1.display());
+// console.log("=============");
+// person1.setFirstName("Sarah");
+// person1.setLastName("James");
+// person1.setEmail("sarah@gmail.com");
+// console.log(person1.display());
+
+/* OnClick */
+// function addition() {
+//     let numb1 = document.querySelector("#numb1").value;
+//     let numb2 = document.querySelector("#numb2").value;
+//     let output = document.querySelector('#output').innerText = numb1 + numb2;
+// }
+function addition(e) {
+    e.preventDefault();
+    let numb1 = document.querySelector("#numb1").value;
+    let numb2 = document.querySelector("#numb2").value;
+    document.querySelector('#output').innerText = eval(`${numb1} + ${numb2}`);
+}
+
+let btnAddition = document.querySelector('button');
+btnAddition.addEventListener('click', ()=>{
+    let numb1 = document.querySelector("numb1").value;
+    let numb2 = document.querySelector("numb1").value;
+    let output = document.querySelector("#output").innerText = parseInt(numb1) + parseInt(numb2);
+})
